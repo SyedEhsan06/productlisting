@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import dataJson from "../components/data.json";
 
-
 const Card = styled.div`
   position: relative;
-  background-color: #f8f8f8;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: beige;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 300px;
   height: 400px;
   margin: 10px;
@@ -27,19 +26,17 @@ const Top = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px 20px 0 0;
-    transition: transform 0.2s;
+    transition: width 0.2s, height 0.2s;
+  }
 
-    &:hover {
-      transform: scale(1.05);
-    }
+  &:hover img {
+    width: 110%;
+    height: 110%;
   }
 `;
 
@@ -49,11 +46,11 @@ const Bottom = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 `;
 
 const Title = styled.h3`
-  font-size: 24px;
+  font-size: 22px;
   margin: 0;
   color: #333;
 `;
@@ -61,11 +58,11 @@ const Title = styled.h3`
 const Category = styled.p`
   font-size: 18px;
   margin: 5px 0;
-  color: #777;
+  color: #888;
 `;
 
 const Price = styled.p`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
   color: #007bff;
@@ -75,47 +72,29 @@ const Filternav = styled.div`
   display: flex;
   background-color: #007bff;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   color: white;
   justify-content: space-around;
   gap: 20px;
   font-weight: bold;
   font-size: 20px;
   cursor: pointer;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
-
 const Pagebutton = styled.button`
-  padding: 12px 24px;
+  padding: 10px;
   border-radius: 5px;
   background-color: white;
   color: #007bff;
-  border: 2px solid #007bff;
+  border: none;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s, color 0.2s;
-
-  &:hover {
-    background-color: #007bff;
-    color: white;
-  }
-
-  &:disabled {
-    background-color: grey;
-    color: #888;
-    cursor: not-allowed;
-  }
 `;
-
 const FilterSelect = styled.select`
-  padding: 12px;
+  padding: 10px;
   border-radius: 30px;
   background-color: white;
   color: #007bff;
-  border: 2px solid #007bff;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
 
   &:hover {
     background-color: #f0f0f0;
@@ -126,21 +105,23 @@ const FilterOption = styled.option`
   background-color: white;
   color: #007bff;
   cursor: pointer;
-  border: none;
-  border-radius: 20px;
-
+border:none;
+border-radius:20px;
   &:hover {
     background-color: #f0f0f0;
   }
 `;
-
 const Pagination = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 5px;
+  /* float: right; */
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
