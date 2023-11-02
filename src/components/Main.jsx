@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import dataJson from "../components/data.json";
 
+// Styled components for various parts of the UI
 const Divmain = styled.div`
   display: flex;
   background-color: #c3c3ff;
@@ -187,7 +188,13 @@ const FilterSelect = styled.select`
   &:hover {
     background-color: #f0f0f0;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px 20px;
+  }
 `;
+
 
 const FilterOption = styled.option`
   background-color: white;
@@ -242,10 +249,11 @@ const Main = () => {
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [cat, setCat] = useState("All");
   const [isRupee, setisRupee] = useState(true);
+    // Function to toggle currency (Rupee/Dollar)
   const toggleCurrency = () => {
     setisRupee(!isRupee);
   };
-  console.log(isRupee);
+   // Initialize data from JSON file
   useEffect(() => {
     setData(dataJson[0].products);
     setSortedData(dataJson[0].products);
@@ -254,7 +262,7 @@ const Main = () => {
   }, []);
 
   const totalPages = Math.ceil(sortedData.length / itemsPerPage);
-
+//Sorting By price
   const handleSort = (type) => {
     const sorted = [...sortedData];
     if (type === "lowToHigh") {
@@ -266,14 +274,14 @@ const Main = () => {
     }
     setSortedData(sorted);
   };
-
-  console.log(sortedData.filter((p) => p.price > 300));
+  //Pagination
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
   const category = [...dataJson[0].products];
   const datCat = category.map((item) => item.category);
   const distinctCategory = [...new Set(datCat)];
+  //Categorising
   const categorised = (value) => {
     const mainData = dataJson[0].products;
     setCat(value);
@@ -282,6 +290,7 @@ const Main = () => {
     setSortedData(sorted);
   };
   return (
+
     <Divmain className="main">
       <Filternav>
         <div className="center">

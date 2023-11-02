@@ -1,0 +1,51 @@
+Description
+Welcome to our web app. This app helps you explore and shop for various products. You can easily filter products, sort them by price, and switch between different currencies.
+
+Getting Started
+Follow these steps to get started:
+
+Clone the Project: Copy the project to your computer.
+
+bash
+Copy code
+git clone https://github.com/yourusername/your-repo.git
+Navigate to the Project Folder: Open the project directory.
+
+bash
+Copy code
+cd your-repo
+Install Dependencies: Install the necessary tools.
+
+Copy code
+npm install
+Start the App: Launch the app in your web browser.
+
+sql
+Copy code
+npm run dev
+Explore the App: Open your web browser and visit http://localhost:5173 to explore the app.
+Features
+View a list of products with details.
+Filter products by category.
+Sort products by price (low to high, high to low), or random order.
+Toggle between Rupee and Dollar currency formats.
+Works on both mobile and desktop.
+Data
+The app uses data from a file called data.json. You can modify this file to customize the product data.
+
+Project Structure
+The project follows a typical React structure.
+
+Contributions
+If you'd like to contribute to this project, feel free to:
+
+Fork the Repository: Make a copy of the project in your GitHub account.
+Create a Branch: Make changes in a separate branch.
+Submit a Pull Request: Share your changes for review.
+License
+
+// I HAVE USED
+
+REACT WITH VITE 
+STYLED COMPONENTS
+JSON FROM A DUMMY JSON
