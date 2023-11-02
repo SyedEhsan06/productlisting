@@ -216,7 +216,7 @@ const Main = () => {
           <Pagebutton
             style={{
               background:
-                currentPage === totalPages ? "grey" : "rgb(110 162 217)",
+                currentPage === totalPages ? "grey" : "crimson",
               color: currentPage === totalPages ? "black" : "white",
               cursor: currentPage === totalPages ? "not-allowed" : "pointer",
             }}
@@ -250,7 +250,7 @@ const Main = () => {
                 <Bottom>
                   <Title>{item.title}</Title>
                   <Category>{item.category}</Category>
-                  <Price>{item.price * 75}₹</Price>
+                  <Price>{item.price * 75}₹({item.price}$)</Price>
                 </Bottom>
               </Card>
             ))}
@@ -273,7 +273,7 @@ const Main = () => {
               style={{
                 background: currentPage == page + 1 ? "#1a4062" : "white",
                 color: currentPage == page + 1 ? "white" : " #007bff",
-                fontSize: currentPage == page + 1 ? "19px" : "14px",
+                fontSize: currentPage == page + 1 ? "21px" : "14px",
               }}
               key={page}
               onClick={() => handlePageChange(page + 1)}
